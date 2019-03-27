@@ -1,0 +1,68 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <img
+          class="card-img-top img-thumbnail"
+          src="{{ product.photoUrl }}"
+          alt="{{ product.name }}"
+        />
+        <div class="card-body">
+          <div>
+            <h4 class="text-capitalize ">{{ product.name }}</h4>
+            <p></p>
+          </div>
+          <div>
+            <strong style="float: left;" class="mr-2">By: </strong>
+            <p class="text-capitalize">{{ product.brand }}</p>
+          </div>
+          <div>
+            <strong style="float: left;" class="mr-2">Price: </strong>
+            <p>{{ product.price }} ₪</p>
+          </div>
+        </div>
+        <div class="card-footer d-flex">
+          <button 
+          *ngIf="!isManager()"
+          class="btn btn-primary w-100" (click)="addToCart()">
+            <i class="fa fa-shopping-cart mr-1"></i>Add To Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-8">
+      <div class="tab-panel bg-white p-4">
+        <tabset class="product-tabset">
+          <tab heading="Description">
+            <h4>Description</h4>
+            <p>{{ product.description }}</p>
+          </tab>
+
+          <tab heading="Suggested use">
+            <h4>Suggested use</h4>
+            <p>{{ product.suggestedUse }}</p>
+          </tab>
+
+          <tab heading="Other Ingredients">
+            <h4>Other Ingredients</h4>
+            <p>{{ product.otherIngredients }}</p>
+          </tab>
+
+          <tab heading="Warnings">
+            <h4>Warnings</h4>
+            <p>{{ product.warnings }}</p>
+          </tab>
+
+          <tab heading="Photos">
+            <h4>Photos</h4>
+            <ngx-gallery
+              [options]="galleryOptions"
+              [images]="galleryImages"
+            ></ngx-gallery>
+          </tab>
+        </tabset>
+      </div>
+    </div>
+  </div>
+</div>

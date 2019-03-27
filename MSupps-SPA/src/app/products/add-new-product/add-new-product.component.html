@@ -1,0 +1,114 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-sm-4 text-light"><h1>Add New Product</h1></div>
+    <div class="col-sm-12">
+      <div class="bg-white p-4">
+        <form #addForm="ngForm" id="addForm" (ngSubmit)="addProduct()">
+          <h4>Product Name:</h4>
+          <textarea
+            name="name"
+            rows="1"
+            class="form-control"
+            [(ngModel)]="model.name"
+            id="name"
+          ></textarea>
+          <h4>Brand:</h4>
+          <textarea
+            name="brand"
+            rows="1"
+            class="form-control"
+            [(ngModel)]="model.brand"
+            id="brand"
+          ></textarea>
+          <h4>Category:</h4>
+          <textarea
+            name="category"
+            rows="1"
+            class="form-control"
+            [(ngModel)]="model.category"
+            id="category"
+          ></textarea>
+          <h4>Price: (In NIS ₪)</h4>
+          <input
+            name="price"
+            type="number"
+            min="1"
+            rows="1"
+            class="form-control"
+            [(ngModel)]="model.price"
+            id="price"
+          />
+          <h4>Quantity:</h4>
+          <input
+            name="quantity"
+            type="number"
+            min="1"
+            rows="1"
+            class="form-control"
+            [(ngModel)]="model.quantity"
+            id="quantity"
+          />
+          <h4>Description</h4>
+          <textarea
+            name="description"
+            rows="6"
+            class="form-control"
+            [(ngModel)]="model.description"
+            id="description"
+          ></textarea>
+
+          <h4>Suggested use</h4>
+          <textarea
+            name="suggestedUse"
+            rows="6"
+            class="form-control"
+            [(ngModel)]="model.suggestedUse"
+            id="suggestedUse"
+          ></textarea>
+          <h4>Ingredients</h4>
+
+          <textarea
+            name="otherIngredients"
+            rows="6"
+            class="form-control"
+            [(ngModel)]="model.otherIngredients"
+            id="otherIngredients"
+          ></textarea>
+
+          <h4>Warnings</h4>
+
+          <textarea
+            name="warnings"
+            rows="6"
+            class="form-control"
+            [(ngModel)]="model.warnings"
+            id="warnings"
+          ></textarea>
+
+          <h4>Photos</h4>
+          <div>
+            <input
+              [(ngModel)]="mainPhotoUrl"
+              name="mainPhotoUrl"
+              placeholder="Main Photo URL"
+              id="mainPhotoUrl"
+              class="mb-3 p-2 rounded w-75"
+            />
+            <h5>Secondary Photos URL (separated by comma)</h5>
+            <textarea
+              [(ngModel)]="secondaryPhotosUrl"
+              name="secondaryPhotosUrl"
+              id="secondaryPhotosUrl"
+              class="p-2 rounded w-75"
+              rows="5"
+              placeholder="Secondary Photos"
+            ></textarea>
+          </div>
+          <button class="btn btn-primary">
+            Add Product<i class="fa fa-check ml-2" aria-hidden="true"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

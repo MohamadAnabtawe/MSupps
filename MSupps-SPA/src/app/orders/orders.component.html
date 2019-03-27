@@ -1,0 +1,27 @@
+<div class="container bg-white" style="border-radius: 20px">
+  <div class="my-5 mx-2">
+    <div *ngIf="!ordersIsEmpty()" class="container p-1 bg-white">
+      <h3 class="p-1 ml-2 mt-3">My Orders</h3>
+    </div>
+    <div class="container p-2 bg-white">
+      <div *ngFor="let order of orders">
+        <hr />
+        <app-orders-item [order]="order"></app-orders-item>
+      </div>
+    </div>
+    <div></div>
+    <div
+      class="container bg-light text-dark text-center p-5"
+      *ngIf="ordersIsEmpty()"
+      style="border-radius:30px;"
+    >
+      <img
+        src="https://i.ibb.co/hWf9qJ4/cart.png"
+        alt="cart"
+        style="width: 300px; height: 300px;"
+      />
+      <h4 class="display-4 mt-3">You didn't order anything yet!</h4>
+    </div>
+    <div></div>
+  </div>
+</div>

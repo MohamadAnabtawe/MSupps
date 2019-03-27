@@ -1,0 +1,5 @@
+.remove:hover {
+  color: red;
+  cursor: pointer;
+  font-weight: bold;
+}

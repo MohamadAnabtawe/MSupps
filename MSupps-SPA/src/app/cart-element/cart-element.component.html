@@ -1,0 +1,36 @@
+<div class="m-1">
+  <img
+    src="{{ cartProduct.product.photoUrl }}"
+    style="max-width: 100px; max-height: 100px; float: left"
+    class="mr-2"
+  />
+  <div
+    style="float: left"
+    [routerLink]="['/supplements/', cartProduct.product.id]"
+  >
+    <p class="font-weight-bold lead ">{{ cartProduct.product.name }}</p>
+    <p>{{ cartProduct.product.brand }}</p>
+
+  </div>
+  <div style="float: right;">
+    <p style="float: left; margin-right: 5px">Quantity:</p>
+    <input
+      #quantity
+      style="width: 50px; float: left;"
+      type="number"
+      name="myDecimal"
+      min="1"
+      max="10"
+      value="{{ cartProduct.quantity }}"
+      placeholder="{{ cartProduct.quantity }}"
+      ng-model="myDecimal | number : 2"
+      step="1"
+    />
+    <p style="clear: both;">
+      Price: <span #price>{{quantity.value * cartProduct.product.price | number }} </span> ₪
+    </p>
+    <a class="btn btn-primary text-light" (click)="updateQuantity(quantity.value)">Update</a>
+    <a class="btn btn-danger text-light ml-1" (click)="removeItem()">Remove</a>
+  </div>
+</div>
+<div style="clear: both;"></div>

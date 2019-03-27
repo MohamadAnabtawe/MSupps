@@ -1,0 +1,43 @@
+<div class="container bg-white" style="border-radius: 20px">
+  <div class="my-5 mx-2">
+    <div *ngIf="!cartIsEmpty()" class="container p-2 bg-white">
+      <h3 class="p-2 ml-2 mt-3">Products</h3>
+    </div>
+    <div class="container p-2 bg-white">
+      <div *ngFor="let cartProduct of cart">
+        <hr />
+        <app-cart-element [cartProduct]="cartProduct"
+        ></app-cart-element>
+      </div>
+    </div>
+
+    <div></div>
+    <div *ngIf="!cartIsEmpty()" class="container p-2 bg-white">
+      <hr />
+      <div style="float: right;">
+        <h5 class="p-2 ml-2">
+          Order Total: <span> {{ totalPrice | number}}</span> ₪
+        </h5>
+      </div>
+      <div style="clear: both;"></div>
+      <div style="float: right;">
+        <button class="btn btn-success w-100">Proceed to Checkout</button>
+      </div>
+      <div style="clear: both;"></div>
+    </div>
+
+    <div
+      class="container bg-light text-dark text-center p-5"
+      *ngIf="cartIsEmpty()"
+      style="border-radius:30px;"
+    >
+      <img
+        src="https://i.ibb.co/hWf9qJ4/cart.png"
+        alt="cart"
+        style="width: 300px; height: 300px;"
+      />
+      <h4 class="display-4 mt-3">You don't have anything in you cart!</h4>
+    </div>
+    <div></div>
+  </div>
+</div>

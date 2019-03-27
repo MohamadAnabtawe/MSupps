@@ -1,0 +1,12 @@
+<div class="m-5">
+  <div
+    class="container  bg-light p-1"
+    style="border-radius: 40px; box-shadow: 0 4px 20px 0 rgb(0, 238, 255), 0 9px 30px 0 rgb(0, 217, 255);"
+  >
+    <div class="ml-4 mt-2 p-1"><h4>Website Members:</h4></div>
+    <div *ngFor="let user of users" class="text-dark p-1 m-2 ml-4">
+      <hr />
+      <app-member-list-item [user]="user"></app-member-list-item>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.toggleMenuStyle {
+  display: block;
+  text-align: center;
+}
+@media (max-width: 992px) {
+  .ToggleStyle {
+    width: 100%;
+    display: block;
+  }
+  .ToggleListItemStyle {
+    width: 100%;
+    display: block;
+  }
+  .ToggleListItemStyle:hover {
+    width: 100%;
+    display: block;
+    background: rgb(0, 195, 255);
+  }
+}
+@media (min-width: 993px) {
+  .loggedInToggle {
+    position: absolute;
+    right: 0px;
+    padding-bottom: 10px;
+  }
+}
+.navbar-brand span:hover{
+  color:coral;
+}

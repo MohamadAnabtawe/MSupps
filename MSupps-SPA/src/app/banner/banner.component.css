@@ -1,0 +1,17 @@
+#banner {
+  background: url(../images/b3.jpg) no-repeat;
+  top: 0;
+  max-width: 100%;
+  min-height: 420px;
+  display: block;
+  border-bottom: rgb(0, 238, 255) 2px solid;
+  object-fit: contain;
+  margin-top: 62px;
+}
+
+@media (max-width: 420px) {
+  #banner {
+    background: url(../images/b3_sm.jpg) no-repeat;
+    background-color: #1c1c1c;
+  }
+}

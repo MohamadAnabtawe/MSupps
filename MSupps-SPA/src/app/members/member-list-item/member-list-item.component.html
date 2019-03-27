@@ -1,0 +1,19 @@
+<div>
+  <p>
+    <strong>userID: #{{ user.id }}</strong>
+  </p>
+</div>
+
+<div class="lead">
+  <div style="float:right">
+    <button 
+    (click)="deleteUser()" 
+    class="btn btn-danger">
+      <i class="fa fa-trash mr-2"></i> Delete
+    </button>
+  </div>
+  <p><strong>First Name: </strong>{{ user.firstName }}</p>
+  <p><strong>Last Name: </strong>{{ user.lastName }}</p>
+  <p><strong>Email: </strong>{{ user.email }}</p>
+  <p><strong>Address: </strong>{{ user.address }}</p>
+</div>

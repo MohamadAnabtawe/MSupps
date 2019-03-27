@@ -1,0 +1,71 @@
+#boxes .box {
+  float: left;
+  width: 29%;
+  height: 320px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #f5f4f4;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 4px 10px 0 rgb(0, 238, 255),
+    0 9px 20px 0 rgba(255, 141, 75, 0.342);
+}
+#boxes #express {
+  max-width: 260px;
+  content: url(../images/exp.png);
+  margin: auto;
+  padding: 10px;
+}
+#boxes #express:hover {
+  content: url(../images/exp_hover.png);
+}
+
+#boxes #guranteed {
+  max-width: 200px;
+  padding: 10px;
+  content: url(../images/Guranteed.png);
+  margin: auto;
+}
+#boxes #guranteed:hover {
+  content: url(../images/guranteed_hover.png);
+}
+
+#boxes #secure {
+  max-width: 200px;
+  padding: 10px;
+  content: url(../images/secure.png);
+  margin: auto;
+}
+#boxes #secure:hover {
+  content: url(../images/secure_hover.png);
+}
+.box_title::after {
+  content: '';
+  display: block;
+  height: 1.5px;
+  width: 30%;
+  border-top: 2px solid #b54321;
+  margin: 8px auto 10px;
+}
+
+@media (max-width: 992px) {
+  #boxes .box {
+    clear: both;
+    width: 90%;
+  }
+  #boxes #secure {
+    content: url(../images/secure_hover.png);
+    cursor: pointer;
+  }
+  #boxes #guranteed {
+    content: url(../images/guranteed_hover.png);
+    cursor: pointer;
+  }
+  #boxes #express {
+    content: url(../images/exp_hover.png);
+    cursor: pointer;
+  }
+  .advice {
+    display: none;
+  }
+}

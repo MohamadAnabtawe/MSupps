@@ -1,0 +1,8 @@
+h1:hover {
+  color: rgb(0, 204, 255);
+  cursor: pointer;
+}
+
+h1{
+  font-weight: 300;
+}

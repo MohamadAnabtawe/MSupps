@@ -1,0 +1,23 @@
+.input-group-append {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-left: none;
+  cursor: pointer;
+  background-color: rgb(0, 204, 255);
+}
+
+.input-group input {
+  font-size: 17px;
+  padding: 10px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.input-group {
+  width: 50%;
+}
+@media (max-width: 500px) {
+  .input-group {
+    width: 80%;
+  }
+}

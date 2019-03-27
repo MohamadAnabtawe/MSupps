@@ -1,0 +1,159 @@
+<nav
+  class="navbar fixed-top navbar-dark navbar-expand-lg"
+  style="background-color:#050505;min-height: 62px; border-bottom: rgb(0, 238, 255) 2px solid;"
+>
+  <a class="navbar-brand" [routerLink]="['/home']">
+    <span style="color: rgb(0, 195, 255)">MKA</span> Supplements</a
+  >
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    (click)="onToggleMenu()"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div
+    class="collapse navbar-collapse"
+    id="navbarSupportedContent"
+    [ngClass]="{ toggleMenuStyle: toggleMenu === true }"
+  >
+    <ul class="navbar-nav mr-auto">
+      <li
+        class="nav-item"
+        routerLinkActive="router-link-active"
+        [ngClass]="{ ToggleListItemStyle: toggleMenu === true }"
+      >
+        <a class="nav-link" [routerLink]="['/aboutUs']">About Us</a>
+      </li>
+      <li
+        class="nav-item dropdown"
+        routerLinkActive="router-link-active"
+        [ngClass]="{ ToggleListItemStyle: toggleMenu === true }"
+      >
+        <a
+          class="nav-link dropdown-toggle"
+          data-toggle="dropdown"
+          style="cursor: pointer;"
+          >Supplements</a
+        >
+        <div class="dropdown-menu">
+          <a class="dropdown-item" [routerLink]="['/supplements']"
+            >All Supplements</a
+          >
+          <a
+            class="dropdown-item text-bold"
+            [routerLink]="['/supplements/category', 'amino']"
+            >Amino Asids</a
+          >
+          <a
+            class="dropdown-item"
+            [routerLink]="['/supplements/category', 'protein']"
+            >Protein</a
+          >
+          <a
+            class="dropdown-item"
+            [routerLink]="['/supplements/category', 'vitamin']"
+            >Vitamins</a
+          >
+          <a
+            class="dropdown-item"
+            [routerLink]="['/supplements/category', 'mineral']"
+            >Minerals</a
+          >
+          <a
+            class="dropdown-item"
+            [routerLink]="['/supplements/category', 'diet']"
+            >Diet And Weight Loss</a
+          >
+        </div>
+      </li>
+      <li
+        class="nav-item"
+        routerLinkActive="router-link-active"
+        [ngClass]="{ ToggleListItemStyle: toggleMenu === true }"
+      >
+        <a *ngIf="!loggedIn()" class="nav-link" [routerLink]="['/register']"
+          >Sign Up</a
+        >
+      </li>
+      <div
+        *ngIf="loggedIn()"
+        class="nav-item dropdown loggedInToggle mr-lg-5"
+        [ngClass]="{ ToggleListItemStyle: toggleMenu === true }"
+      >
+        <a
+          class="nav-link dropdown-toggle text-light"
+          href="#"
+          data-toggle="dropdown"
+          >Welcome {{ authService.decodedToken?.given_name | titlecase }}
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item text-bold" [routerLink]="['/profile']"
+            ><i class="fa fa-user mr-2"></i>Profile</a
+          >
+          <a 
+          *ngIf="!isManager()"
+          class="dropdown-item" [routerLink]="['/cart']"
+            ><i class="fa fa-shopping-cart mr-2"></i>My Cart</a
+          >
+          <a class="dropdown-item"
+             *ngIf="!isManager()" 
+             [routerLink]="['/orders']"
+            ><i class="fa fa-tasks mr-2"></i>My Orders</a
+          >
+          <a
+            *ngIf="isManager()"
+            class="dropdown-item"
+            [routerLink]="['/manage']"
+            ><i class="fa fa-cog mr-2"></i>Manage</a
+          >
+          <div class="dropdown-divider"></div>
+          <a (click)="logout()" class="dropdown-item text-bold" href="#"
+            ><i class="fa fa-sign-out mr-2"></i>Logout</a
+          >
+        </div>
+      </div>
+    </ul>
+
+    <form
+      *ngIf="!loggedIn()"
+      #loginForm="ngForm"
+      class="form-inline my-2 my-md-0"
+      (ngSubmit)="login()"
+    >
+      <input
+        required
+        name="email"
+        [ngClass]="{ ToggleStyle: toggleMenu === true }"
+        class="form-control my-1 mx-1"
+        type="text"
+        placeholder="Email Address"
+        aria-label="Email"
+        [(ngModel)]="model.email"
+      />
+     
+      <input
+        required
+        [ngClass]="{ ToggleStyle: toggleMenu === true }"
+        name="password"
+        class="form-control my-1 mx-1"
+        type="password"
+        placeholder="Password"
+        aria-label="Password"
+        [(ngModel)]="model.password"
+      />
+
+      <button
+        [disabled]="!loginForm.valid"
+        class="btn  btn-primary my-1 mx-1"
+        [ngClass]="{ ToggleStyle: toggleMenu === true }"
+        type="submit"
+      >
+        Login
+      </button>
+    </form>
+  </div>
+</nav>

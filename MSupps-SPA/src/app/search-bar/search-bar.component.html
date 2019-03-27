@@ -1,0 +1,21 @@
+<div style="background-color: #050505;" class="text-center py-1">
+  <div class="input-group pl-0 container py-3 ">
+    <input
+      #searchString
+      class="form-control my-0 py-1"
+      type="text"
+      placeholder="Search"
+      aria-label="Search"
+    />
+    <div class="input-group-append px-3" (click)="search(searchString.value)">
+      <span
+        class="input-group-text"
+        style="background: none; border:none;  color: white;"
+        ><i class="fa fa-search"></i
+      ></span>
+    </div>
+  </div>
+  <p class="text-light lead text-center mt-1">
+    Start searching for supplements now what are you waiting for!
+  </p>
+</div>

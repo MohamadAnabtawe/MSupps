@@ -1,0 +1,18 @@
+<div class="m-1 text-dark">
+  <div style="float: left">
+    <p>
+      <strong>order number #{{ order.id }}</strong>
+    </p>
+    {{ order.orderDate | date }}
+  </div>
+  <div style="float: right;">
+    <strong style="float: left; margin-right: 5px">Total Paid:</strong>
+    <p style="clear: both;">
+      <span #price>{{ order.totalPrice | number }}</span> ₪
+    </p>
+    <button 
+    (click)="orderDetails()" 
+    class="btn btn-primary">More details</button>
+  </div>
+</div>
+<div style="clear: both;"></div>

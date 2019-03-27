@@ -1,0 +1,37 @@
+<div style="float: left;">
+  <img
+    src="{{ product.photoUrl }}"
+    alt="No Image"
+    class="mr-3 p-2"
+    style="width: 200px;height: 200px; border: rgb(0, 133, 133) 1px solid; border-radius: 5px"
+  />
+</div>
+<div style="float: left;">
+  <div>
+    <p>
+      <strong># {{ product.id }}</strong>
+    </p>
+    <p><strong>Product Name: </strong>{{ product.name }}</p>
+    <p><strong>Brand: </strong>{{ product.brand }}</p>
+    <p><strong>Price: </strong>{{ product.price }}</p>
+  </div>
+</div>
+
+<div style="clear: both;"></div>
+<hr />
+<div style="float:right" class="my-1">
+  <button 
+  (click)="deleteProduct()" 
+  class="btn btn-danger m-1">
+    <i class="fa fa-trash mr-2"></i>Delete
+  </button>
+  <button
+    [routerLink]="['/manage/product', product.id]"
+    class="btn btn-primary m-1"
+  >
+    <i class="fa fa-pencil-square-o"></i> Update
+  </button>
+</div>
+
+<div style="clear: both;"></div>
+<hr />

@@ -1,0 +1,51 @@
+<div class="container">
+  <div
+    class="text-light  text-center my-4"
+  
+  >
+    <h3 class="display-4">Edit Profile</h3>
+    <form class="mt-4 mb-5">
+      <h5 class="m-1 lead">First Name:</h5>
+      <input
+        type="text"
+        class="m-1"
+        name="firstName"
+        [(ngModel)]="user.firstName"
+      />
+      <h5 class="m-1 lead">Last Name:</h5>
+      <input
+        type="text"
+        class="m-1"
+        name="lastName"
+        [(ngModel)]="user.lastName"
+      />
+      <h5 class="m-1 lead">Email:</h5>
+      <input
+        type="text"
+        readonly
+        class="m-1"
+        name="email"
+        [(ngModel)]="user.email"
+      />
+      <h5 class="m-1 lead">Address:</h5>
+      <input
+        type="text"
+        class="m-1"
+        name="address"
+        [(ngModel)]="user.address"
+      />
+      <h5 class="m-1 lead">Birthday:</h5>
+      <input
+        type="text"
+        class="m-1"
+        name="Birthday"
+        readonly
+        value="{{ user.dateOfBirth | date: 'mm/dd/yyyy' }}"
+      />
+      <div class="mb-5"></div>
+      <button 
+      (click)="updateUser()" 
+      class="btn btn-primary m-2">Update Profile</button>
+    </form>
+  </div>
+</div>
